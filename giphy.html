@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Food is Life </title>
+    <link rel="stylesheet" type="style/css" href="giphy.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1> Food is Life! </h1>
+        <div id="buttons-view"></div>
+        <br>
+        <form id="button-form">
+            <input type="text" id="giph-input">
+            <br>
+            <!-- button triggers new food to be added -->
+            <br>
+            <input id="add-button" type="submit" value="Add a Giph">
+        </form>
+        <div id="foodie"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        var foodArray = ["French Fries", "Pizza", "Cheesburgers", "Macaroni", "Mashed Potatos", "Bread", "Brownies", "Fried Chicken", "Spaghetti", "Chicken and Waffles"]
+
+        function displayFoodInfo() {
+            var food = $(this).attr("data-name");
+            var APIkey = "lg9jhzd80UCOGP9T9naY0dF99lFiKlqs";
+            var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + APIkey + "&q=" + food + "&limit=25&offset=0&rating=G&lang=en";
+            console.log("hey");
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function(response) {
+                //for ( var i=0; i<results.length; i++) {
+                var results = response.data;
+                console.log(results);
+
+                var foodDiv = $("#foodie");
+                foodDiv.empty();
+                for (var i = 0; i < results.length; i++) {
+                    var rating = results[i].rating;
+                    var paragraph = $("<p>").text("Rating:" + rating);
+                    var stillimageURL = results[i].images.fixed_height_still.url;
+                    var animatedImageURL = results[i].images.fixed_height.url;
+
+                    foodDiv.append(paragraph);
+
+
+
+
+                    //var stillImages = $("<img>").attr("src", stillimageURL);
+                    var animatedImages = $("<img>").attr("src", animatedImageURL);
+                    foodDiv.append(animatedImages);
+
+                    //stillImages.attr("data-state","still").attr("class", "gif");
+                    animatedImages
+                        .attr("data-state", "animate")
+                        .attr("class", "gif")
+                        .attr("data-animateURL", animatedImageURL)
+                        .attr("data-stillURL", stillimageURL);
+
+
+
+                }
+
+
+              $(".gif").click(function() {
+            var state = $(this).attr("data-state");
+
+            if (state === "still") {
+                $(this).attr("src", $(this).attr("data-animateURL"));
+                $(this).attr("data-state", "animate");
+                //   foodDiv.append(animatedimages);
+            } else {
+                $(this).attr("src", $(this).attr("data-stillURL"));
+                $(this).attr("data-state", "still");
+                // foodDiv.append(stillImages);
+            }
+        })
+
+
+            })
+
+        }
+
+
+  
+
+
+        function renderButtons() {
+            $("#buttons-view").empty();
+            for (var i = 0; i < foodArray.length; i++) {
+                var a = $("<button>");
+                a.addClass("food-btn");
+                a.attr("data-name", foodArray[i]);
+
+                a.text(foodArray[i]);
+                $("#buttons-view").append(a);
+            }
+        }
+        $("#add-button").on("click", function(event) {
+            event.preventDefault();
+
+            var foodisLife = $("#giph-input").val();
+
+            foodArray.push(foodisLife);
+
+            renderButtons();
+        })
+
+
+
+        $(document).on("click", ".food-btn", displayFoodInfo);
+        renderButtons();
+
+
+        </script>
+</body>
+
+</html>
