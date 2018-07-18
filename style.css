@@ -1,59 +1,33 @@
 body {
 
-<<<<<<< HEAD
 	background-image: url("guglieri-speciale.jpg");
-=======
-    background-image: url("guglieri-speciale.jpg");
-   
->>>>>>> ae8b0eaeb94a187b44cf99e65fb91b05bc67b6bc
 
 }
 
  #lol {
 	
 	    font-size: 70px;
-<<<<<<< HEAD
 		text-align: center;
 		font-family: 'Poppins', sans-serif;
 		font-weight: bold;
 }
 
-=======
-        text-align: center;
-       
-}
-
-h1, button, #buttons-view, #lol {
-    font-family: 'Fredoka One', cursive;
-}
->>>>>>> ae8b0eaeb94a187b44cf99e65fb91b05bc67b6bc
  #giph-input, #add-button {
 	
 	margin-left: auto;
 	margin-right: auto;
 	font-size: 20px;
-<<<<<<< HEAD
 	display: block;
 	font-family: 'Poppins', sans-serif;
 	
 }
 
-=======
-    display: block;
-    font-family: 'Fredoka One', cursive;
-	
-}
-
-
-
->>>>>>> ae8b0eaeb94a187b44cf99e65fb91b05bc67b6bc
 #buttons-view {
 	margin: auto;
 	width: 100%;
 
 	font-size: 20px;
 }
-<<<<<<< HEAD
 
 .food-btn {
 	font-family: 'Poppins', sans-serif;
@@ -66,12 +40,8 @@ h1, button, #buttons-view, #lol {
 #buttons-view {
 	text-align: center;
 }
-=======
- 
-.divider{
-    width:5px;
-    height:auto;
-    display:inline-block;
-}
+.btn {
+	margin-left:1%;
+	margin-top:1%;
 
->>>>>>> ae8b0eaeb94a187b44cf99e65fb91b05bc67b6bc
+}
