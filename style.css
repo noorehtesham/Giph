@@ -1,0 +1,42 @@
+body {
+
+	background-image: url("guglieri-speciale.jpg");
+
+}
+
+ #lol {
+	
+	    font-size: 70px;
+		text-align: center;
+		font-family: 'Poppins', sans-serif;
+		font-weight: bold;
+}
+
+ #giph-input, #add-button {
+	
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 20px;
+	display: block;
+	font-family: 'Poppins', sans-serif;
+	
+}
+
+#buttons-view {
+	margin: auto;
+	width: 100%;
+
+	font-size: 20px;
+}
+
+.food-btn {
+	font-family: 'Poppins', sans-serif;
+	display:inline-block;
+	text-align: center;
+	margin-left:1%;
+	margin-top: 1%;
+}
+
+#buttons-view {
+	text-align: center;
+}
