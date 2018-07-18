@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
 
 <body>
@@ -19,7 +20,7 @@
             <br>
             <!-- button triggers new food to be added -->
             <br>
-            <input id="add-button" type="submit" value="Add a Giph">
+            <input id="add-button" class="btn btn-secondary" type="submit" value="Add a Giph">
         </form>
         <div id="foodie"></div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -97,6 +98,7 @@
                 var a = $("<button>");
                 a.addClass("food-btn");
                 a.attr("data-name", foodArray[i]);
+                a.addClass("btn btn-secondary");
 
                 a.text(foodArray[i]);
                 $("#buttons-view").append(a);
